@@ -1,0 +1,2 @@
+export const name = 'ENTER YOUR NAME HERE';
+export const resume = `ENTER YOUR WORK + EDUCATION HISTORY IN PLAIN ENGLISH HERE`;
