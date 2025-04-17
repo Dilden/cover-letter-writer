@@ -8,10 +8,12 @@ export const actions = {
 		const body = {
 			model: 'deepseek-r1:8b',
 			stream: false,
-			prompt: `You are ${name}. Your resume reads as follows: "${resume}."
-
-Now, generate a cover letter from Dylan Hildenbrand's perspective for the following job listing: ${jobDesc.get('description')?.toString()}`
+			prompt: `Name: ${name}\n
+Resume: ${resume}\n
+Using information from the provided resume, generate a cover letter for ${name} tailored to the following job listing: ${jobDesc.get('description')?.toString()}`
 		};
+
+		console.log(body.prompt);
 
 		const ollamaRes = await fetch('http://127.0.0.1:11434/api/generate', {
 			method: 'POST',
